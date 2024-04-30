@@ -55,6 +55,7 @@ void Part2::_ready() {
 
     Callable call = callable_mp(this, &Part2::sound_end);
     sound->connect("finished", call);
+    sound->play();
 }
 
 void Part2::sound_end() {

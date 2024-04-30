@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dye76jmwm2wt2" path="res://img/text.png" id="1_2j3se"]
 [ext_resource type="FontFile" uid="uid://d4kuyjcteyvro" path="res://data/font/sans_font.ttf" id="2_tarx5"]
 [ext_resource type="Texture2D" uid="uid://b7rgnm5ejiwyd" path="res://img/sans/sans_head_2.png" id="2_tr1rg"]
-[ext_resource type="AudioStream" uid="uid://cehe4j3p5dskj" path="res://data/battle/sound/start.mp3" id="4_me8oi"]
+[ext_resource type="AudioStream" uid="uid://7vl84rnv72m4" path="res://data/corridor/sound/start.mp3" id="4_rlirv"]
 
 [sub_resource type="Gradient" id="Gradient_8matt"]
 
@@ -60,4 +60,4 @@ offset_bottom = 2370.0
 texture = SubResource("GradientTexture2D_krpwa")
 
 [node name="sound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_me8oi")
+stream = ExtResource("4_rlirv")

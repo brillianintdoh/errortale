@@ -94,7 +94,7 @@
 [ext_resource type="Texture2D" uid="uid://c0xbkugggupsb" path="res://img/button/3_.png" id="92_2ahxe"]
 [ext_resource type="Texture2D" uid="uid://1osfvvtqwiis" path="res://img/button/4.png" id="93_40a5e"]
 [ext_resource type="Texture2D" uid="uid://tmt4y87jyilf" path="res://img/button/4_.png" id="94_xdqc4"]
-[ext_resource type="AudioStream" uid="uid://cehe4j3p5dskj" path="res://data/battle/sound/start.mp3" id="95_11705"]
+[ext_resource type="AudioStream" uid="uid://4egtb4uqio4j" path="res://data/battle/sound/start.mp3" id="95_11705"]
 
 [sub_resource type="Gradient" id="Gradient_8matt"]
 
