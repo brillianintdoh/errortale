@@ -1,0 +1,72 @@
+[gd_scene load_steps=10 format=3 uid="uid://ct3dy03njbmpv"]
+
+[ext_resource type="Texture2D" uid="uid://l6tukbw0c702" path="res://img/last_corridor.png" id="1_3fdbx"]
+[ext_resource type="PackedScene" uid="uid://c4uqii87aurg1" path="res://scene/user_node.tscn" id="2_x5gcp"]
+[ext_resource type="Texture2D" uid="uid://ctlhh7u6degvl" path="res://img/sans/sans.png" id="3_3td7w"]
+[ext_resource type="PackedScene" uid="uid://16m8304s0ya3" path="res://scene/text_box.tscn" id="4_dcmtr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gka6c"]
+size = Vector2(1188.53, 28.6393)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uk8w6"]
+size = Vector2(1196.21, 147.536)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nhf23"]
+size = Vector2(28.8011, 124.991)
+
+[sub_resource type="Gradient" id="Gradient_8matt"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_o4asc"]
+gradient = SubResource("Gradient_8matt")
+fill_from = Vector2(1, 0)
+
+[node name="Part1" type="Part1"]
+
+[node name="last_corridor" type="Sprite2D" parent="."]
+position = Vector2(1239, 309)
+scale = Vector2(2.08324, 2.30453)
+texture = ExtResource("1_3fdbx")
+
+[node name="wall" type="StaticBody2D" parent="last_corridor"]
+
+[node name="wall_1" type="CollisionShape2D" parent="last_corridor/wall"]
+position = Vector2(1.92053, 112.821)
+shape = SubResource("RectangleShape2D_gka6c")
+
+[node name="wall_2" type="CollisionShape2D" parent="last_corridor/wall"]
+position = Vector2(0.00012207, -58.5803)
+shape = SubResource("RectangleShape2D_uk8w6")
+
+[node name="wall_3" type="CollisionShape2D" parent="last_corridor/wall"]
+position = Vector2(-607.707, 52.4955)
+shape = SubResource("RectangleShape2D_nhf23")
+
+[node name="userNode" parent="last_corridor" instance=ExtResource("2_x5gcp")]
+position = Vector2(-550.197, 61.209)
+scale = Vector2(1, 1)
+
+[node name="sans" type="Sprite2D" parent="last_corridor"]
+visible = false
+position = Vector2(-305.774, -175.307)
+scale = Vector2(0.332543, 0.273635)
+texture = ExtResource("3_3td7w")
+
+[node name="TextBox" parent="last_corridor" instance=ExtResource("4_dcmtr")]
+visible = false
+offset_left = -1008.53
+offset_top = -326.314
+offset_right = 143.475
+offset_bottom = 321.686
+scale = Vector2(0.362384, 0.356249)
+
+[node name="background" type="TextureRect" parent="."]
+z_index = -1
+offset_left = -2997.0
+offset_top = -1860.0
+offset_right = 4013.0
+offset_bottom = 2370.0
+texture = SubResource("GradientTexture2D_o4asc")
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(92.8075, 450.058)
+skew = 0.802851

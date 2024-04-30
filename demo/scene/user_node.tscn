@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://c4uqii87aurg1"]
+
+[ext_resource type="Texture2D" uid="uid://bbho82nh5lu0l" path="res://img/user/user.png" id="1_5x345"]
+[ext_resource type="Texture2D" uid="uid://nxoamb0dxhdm" path="res://img/user/user_right.png" id="1_bcvhs"]
+[ext_resource type="Texture2D" uid="uid://jh6b4q3kn5ji" path="res://img/user/user_left.png" id="1_hbjo6"]
+[ext_resource type="Texture2D" uid="uid://du3eu3rgcsyr5" path="res://img/user/user_work_2.png" id="2_exnoo"]
+[ext_resource type="Texture2D" uid="uid://bwao5jt56qbol" path="res://img/user/user_work_4.png" id="2_k26ru"]
+[ext_resource type="Texture2D" uid="uid://d30rh6ejsfg6y" path="res://img/user/user_work_1.png" id="2_ysi1v"]
+[ext_resource type="Texture2D" uid="uid://xj6qux5pnb84" path="res://img/user/user_.png" id="7_qsaj0"]
+[ext_resource type="Texture2D" uid="uid://dgenunebw4n4n" path="res://img/user/user_work_3.png" id="8_aaidk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_osvil"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5x345")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_k26ru")
+}],
+"loop": true,
+"name": &"work_down",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hbjo6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_exnoo")
+}],
+"loop": true,
+"name": &"work_left",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_bcvhs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ysi1v")
+}],
+"loop": true,
+"name": &"work_right",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_qsaj0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_aaidk")
+}],
+"loop": true,
+"name": &"work_up",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k3h0t"]
+size = Vector2(17, 24)
+
+[node name="userNode" type="userNode"]
+
+[node name="user" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.0989877, 0.0841155)
+sprite_frames = SubResource("SpriteFrames_osvil")
+animation = &"work_down"
+
+[node name="user_body" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_k3h0t")

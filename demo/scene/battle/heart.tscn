@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://2mnybgtxe0i4"]
+
+[ext_resource type="Texture2D" uid="uid://dqhplfhnthhtu" path="res://img/user/battle/red.png" id="1_4a3mi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wx1i"]
+size = Vector2(26, 24)
+
+[node name="Heart" type="Heart"]
+
+[node name="user" type="Sprite2D" parent="."]
+scale = Vector2(0.104, 0.096)
+texture = ExtResource("1_4a3mi")
+
+[node name="body" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4wx1i")
