@@ -53,16 +53,22 @@ void Part2::_ready() {
     background = Object::cast_to<TextureRect>(get_node_internal("background"));
     sound = Object::cast_to<AudioStreamPlayer>(get_node_internal("sound"));
 
-    Callable call = callable_mp(this, &Part2::sound_end);
-    sound->connect("finished", call);
+    Callable fun = callable_mp(this, &Part2::sound_end);
+    sound->connect("finished", fun);
     sound->play();
 }
 
 void Part2::sound_end() {
+    Ref<AudioStream> sound_load = res->load("res://data/battle/sound/sans.mp3");
+    if(sound_load.is_valid()) {
+        sound->set_stream(sound_load);
+    }else {
+        printf("no\n");
+    }
 }
 
 void Part2::_process(double delta) {
     if(isShake) {
-        // shake(delta);
+        shake(delta);
     }
 }

@@ -509,3 +509,4 @@ animation = &"button"
 
 [node name="sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("95_11705")
+stream_paused = true
