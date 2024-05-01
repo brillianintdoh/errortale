@@ -25,9 +25,11 @@ namespace godot {
         private:
             TextureRect* background;
             Sprite2D* sans;
+            Sprite2D* last_corridor;
+            Sprite2D* heart;
             Control* text_box;
             double wait, slep;
-            int wait_i, start, wait_stop;
+            int wait_i, start, wait_stop, start_part;
     };
 }
 #endif

@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://ct3dy03njbmpv"]
+[gd_scene load_steps=11 format=3 uid="uid://ct3dy03njbmpv"]
 
 [ext_resource type="Texture2D" uid="uid://l6tukbw0c702" path="res://img/last_corridor.png" id="1_3fdbx"]
 [ext_resource type="PackedScene" uid="uid://c4uqii87aurg1" path="res://scene/user_node.tscn" id="2_x5gcp"]
 [ext_resource type="Texture2D" uid="uid://ctlhh7u6degvl" path="res://img/sans/sans.png" id="3_3td7w"]
 [ext_resource type="PackedScene" uid="uid://16m8304s0ya3" path="res://scene/text_box.tscn" id="4_dcmtr"]
+[ext_resource type="Texture2D" uid="uid://dqhplfhnthhtu" path="res://img/user/battle/red.png" id="5_5j1qk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gka6c"]
 size = Vector2(1188.53, 28.6393)
@@ -58,6 +59,13 @@ offset_top = -326.314
 offset_right = 143.475
 offset_bottom = 321.686
 scale = Vector2(0.362384, 0.356249)
+
+[node name="Heart" type="Sprite2D" parent="last_corridor"]
+visible = false
+z_index = 11
+position = Vector2(-769.954, -6.94286)
+scale = Vector2(0.0349503, 0.0304323)
+texture = ExtResource("5_5j1qk")
 
 [node name="background" type="TextureRect" parent="."]
 z_index = -1

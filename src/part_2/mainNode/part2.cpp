@@ -1,5 +1,5 @@
 #include "part2.h"
-#include<godot_cpp/classes/audio_stream_mp3.hpp>
+#include<godot_cpp/classes/file_access.hpp>
 #include<godot_cpp/core/class_db.hpp>
 using namespace godot;
 
@@ -12,6 +12,7 @@ Part2::Part2() {
     wait[3] = 0.7;
     sleep = 0;
     isShake = 1;
+    json_index = 0;
 }
 
 Part2::~Part2() {}
@@ -52,6 +53,8 @@ void Part2::_ready() {
     camera = Object::cast_to<Camera2D>(get_node_internal("Camera"));
     background = Object::cast_to<TextureRect>(get_node_internal("background"));
     sound = Object::cast_to<AudioStreamPlayer>(get_node_internal("sound"));
+    Ref<FileAccess> file = FileAccess::open("res://data/battle/battle.json", FileAccess::READ);
+    data_json = json->parse_string(file->get_as_text());
 
     Callable fun = callable_mp(this, &Part2::sound_end);
     sound->connect("finished", fun);
@@ -59,12 +62,7 @@ void Part2::_ready() {
 }
 
 void Part2::sound_end() {
-    Ref<AudioStream> sound_load = res->load("res://data/battle/sound/sans.mp3");
-    if(sound_load.is_valid()) {
-        sound->set_stream(sound_load);
-    }else {
-        printf("no\n");
-    }
+    sound->get_stream()->set_path("res://data/battle/sound/sans.mp3");
 }
 
 void Part2::_process(double delta) {

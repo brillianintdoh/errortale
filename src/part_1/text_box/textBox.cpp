@@ -30,6 +30,7 @@ void TextBox::text_next() {
     text->set_visible_ratio(0);
     ni+=1;
     if(ni == NI+1) {
+        isBattle_start = 1;
         startSound->play();
         get_tree()->change_scene_to_file("res://scene/battle/part_2.tscn");
     }

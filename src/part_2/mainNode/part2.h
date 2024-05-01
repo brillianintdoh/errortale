@@ -2,9 +2,11 @@
 #define Part2_H
 #include "../../main/env/main.h"
 #include<godot_cpp/classes/node2d.hpp>
-#include<godot_cpp/classes/audio_stream.hpp>
 #include<godot_cpp/classes/texture_rect.hpp>
 #include<godot_cpp/classes/resource_loader.hpp>
+#include<godot_cpp/classes/json.hpp>
+#include<godot_cpp/variant/variant.hpp>
+#include<godot_cpp/classes/audio_stream.hpp>
 #include<godot_cpp/classes/audio_stream_player.hpp>
 namespace godot {
     class Part2 : public Node2D {
@@ -24,9 +26,11 @@ namespace godot {
             void _process(double delta) override;
         
         private:
-            int isShake;
+            int isShake, json_index;
             double wait[4], sleep;
             ResourceLoader *res;
+            JSON *json;
+            Variant data_json;
             TextureRect* background;
             AudioStreamPlayer* sound;
     };

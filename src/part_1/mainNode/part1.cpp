@@ -11,6 +11,7 @@ Part1::Part1() {
     wait_i = 6;
     start = 1;
     wait_stop = 0;
+    start_part = 0;
 }
 
 Part1::~Part1() {}
@@ -21,27 +22,36 @@ void Part1::_ready() {
     camera = Object::cast_to<Camera2D>(get_node_internal("Camera"));
     sans = Object::cast_to<Sprite2D>(get_node_internal("last_corridor/sans"));
     text_box = Object::cast_to<Control>(get_node_internal("last_corridor/TextBox"));
+    last_corridor = Object::cast_to<Sprite2D>(get_node_internal("last_corridor"));
+    heart = Object::cast_to<Sprite2D>(get_node_internal("last_corridor/Heart"));
 }
 
 void Part1::battle_start() {
-    wait_stop = wait_i+2;
-    background->set_z_index(5);
-    user->set_z_index(6);
-    sans->set_z_index(6);
-    text_box->set_z_index(6);
-    Vector2 user_pos = user->get_global_position();
-    text_box->set_global_position(user_pos);
-    text_box->set_visible(true);
-    Vector2 pos = user_pos - Vector2(get_window()->get_size().width/3, 0);
-    user->set_global_position(pos);
-    pos = user_pos + Vector2(get_window()->get_size().width/3, 0);
-    sans->set_global_position(pos);
-    sans->set_visible(true);
-    isSans = 1;
+    if(!start_part) {
+        wait_stop = wait_i+2;
+        background->set_z_index(5);
+        user->set_z_index(6);
+        sans->set_z_index(6);
+        text_box->set_z_index(6);
+        Vector2 user_pos = user->get_global_position();
+        text_box->set_global_position(user_pos);
+        text_box->set_visible(true);
+        Vector2 pos = user_pos - Vector2(get_window()->get_size().width/3, 0);
+        user->set_global_position(pos);
+        pos = user_pos + Vector2(get_window()->get_size().width/3, 0);
+        sans->set_global_position(pos);
+        sans->set_visible(true);
+        isSans = 1;
+        start_part = 1;
+    }else {
+        last_corridor->set_z_index(-2);
+        heart->set_global_position(user->get_global_position());
+        heart->set_visible(true);
+    }
 }
 
 void Part1::_process(double delta) {
-    if(user->get_global_position().x >= 1100) {
+    if(user->get_global_position().x >= 1100 && !isBattle_start) {
         if(!wait_stop) {
             isBattle = 1;
         }
@@ -58,6 +68,10 @@ void Part1::_process(double delta) {
     }
 
     if(isBattle_start) {
+        if(!start) {
+            battle_start();
+            start = 1;
+        }
         shake(delta);
     }
 }
