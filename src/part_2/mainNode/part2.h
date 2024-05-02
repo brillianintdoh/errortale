@@ -27,7 +27,8 @@ namespace godot {
         
         private:
             int isShake, json_index;
-            double wait[4], sleep;
+            double wait[4];
+            double sleep_s, sleep_b;
             ResourceLoader *res;
             JSON *json;
             Variant data_json;

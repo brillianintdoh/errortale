@@ -10,7 +10,8 @@ Part2::Part2() {
     wait[1] = 0.3;
     wait[2] = 0.5;
     wait[3] = 0.7;
-    sleep = 0;
+    sleep_s = 0;
+    sleep_b = 0;
     isShake = 1;
     json_index = 0;
 }
@@ -20,29 +21,29 @@ Part2::~Part2() {}
 void Part2::shake(double delta) {
     camera->set_drag_horizontal_offset(0);
     camera->set_drag_vertical_offset(0);
-    sleep+=delta;
-    if(sleep <= wait[0]) {
+    sleep_s+=delta;
+    if(sleep_s <= wait[0]) {
         camera->set_drag_horizontal_offset(0.5);
         camera->set_drag_vertical_offset(0.5);
-    }else if(sleep <= wait[1]) {
+    }else if(sleep_s <= wait[1]) {
         camera->set_drag_horizontal_offset(-0.5);
         camera->set_drag_vertical_offset(-0.5);
-    }else if(sleep <= wait[2]) {
+    }else if(sleep_s <= wait[2]) {
         camera->set_drag_horizontal_offset(0.5);
         camera->set_drag_vertical_offset(-0.5);
-    }else if(sleep <= wait[3]) {
+    }else if(sleep_s <= wait[3]) {
         camera->set_drag_horizontal_offset(-0.5);
         camera->set_drag_vertical_offset(0.5);
-        sleep = 0;
+        sleep_s = 0;
     }
 }
 
 void Part2::black_scene(double delta) {
-    sleep+=delta;
+    sleep_b+=delta;
 
-    if(wait[1] >= sleep) {
+    if(wait[1] >= sleep_s) {
         background->set_z_index(5);
-        sleep = 0;
+        sleep_b = 0;
     }else {
         background->set_z_index(-1);
     }
@@ -62,11 +63,15 @@ void Part2::_ready() {
 }
 
 void Part2::sound_end() {
-    sound->get_stream()->set_path("res://data/battle/sound/sans.mp3");
+    sound->get_stream()->set_path(data_json.get(json_index).get("sound"));
+    sound->play();
+    json_index+=1;
+    isShake = 0;
 }
 
 void Part2::_process(double delta) {
     if(isShake) {
         shake(delta);
+        black_scene(delta);
     }
 }
