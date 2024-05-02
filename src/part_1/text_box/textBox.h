@@ -17,6 +17,7 @@ namespace godot {
             TextBox();
             ~TextBox();
             void text_next();
+            void sound_end();
 
             void _process(double delta) override;
             void _ready() override;

@@ -22,6 +22,9 @@ void TextBox::_ready() {
     sans_data = json->parse_string(json_file->get_as_text());
     text = Object::cast_to<RichTextLabel>(get_node_internal("window/text"));
     startSound = Object::cast_to<AudioStreamPlayer>(get_node_internal("sound"));
+
+    Callable fun = callable_mp(this, &TextBox::sound_end);
+    startSound->connect("finished", fun);
 }
 
 void TextBox::text_next() {
@@ -32,7 +35,6 @@ void TextBox::text_next() {
     if(ni == NI+1) {
         isBattle_start = 1;
         startSound->play();
-        get_tree()->change_scene_to_file("res://scene/battle/part_2.tscn");
     }
 }
 
@@ -50,4 +52,8 @@ void TextBox::_process(double delta) {
         text_next();
         isNext = 0;
     }
+}
+
+void TextBox::sound_end() {
+    get_tree()->change_scene_to_file("res://scene/battle/part_2.tscn");
 }
