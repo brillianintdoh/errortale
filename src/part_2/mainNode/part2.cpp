@@ -54,8 +54,10 @@ void Part2::_ready() {
     camera = Object::cast_to<Camera2D>(get_node_internal("Camera"));
     background = Object::cast_to<TextureRect>(get_node_internal("background"));
     sound = Object::cast_to<AudioStreamPlayer>(get_node_internal("sound"));
-    Ref<FileAccess> file = FileAccess::open("res://data/battle/battle.json", FileAccess::READ);
-    data_json = json->parse_string(file->get_as_text());
+    Ref<FileAccess> data_file = FileAccess::open("res://data/battle/battle.json", FileAccess::READ);
+    Ref<FileAccess> tools_file = FileAccess::open("res://data/battle/tool.json", FileAccess::READ);
+    data_json = json->parse_string(data_file->get_as_text());
+    tools_json = json->parse_string(tools_file->get_as_text());
 
     Callable fun = callable_mp(this, &Part2::sound_end);
     sound->connect("finished", fun);
@@ -63,15 +65,15 @@ void Part2::_ready() {
 }
 
 void Part2::sound_end() {
-    sound->get_stream()->set_path(data_json.get(json_index).get("sound"));
-    sound->play();
-    json_index+=1;
-    isShake = 0;
+    // sound->get_stream()->set_path(data_json.get(json_index).get("sound"));
+    // sound->play();
+    // json_index+=1;
+    // isShake = 0;
 }
 
 void Part2::_process(double delta) {
     if(isShake) {
-        shake(delta);
-        black_scene(delta);
+        // shake(delta);
+        // black_scene(delta);
     }
 }

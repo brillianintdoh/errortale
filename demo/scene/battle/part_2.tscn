@@ -482,31 +482,49 @@ rotation = 0.0291667
 skew = 0.136723
 
 [node name="Heart" parent="." instance=ExtResource("86_kj7bd")]
-position = Vector2(563, 403)
+position = Vector2(570.592, 409.67)
+
+[node name="sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("95_11705")
 
 [node name="UI" type="Node2D" parent="."]
 visible = false
 
-[node name="1" type="AnimatedSprite2D" parent="UI"]
-position = Vector2(297, 585)
+[node name="button" type="Node2D" parent="UI"]
+position = Vector2(-1, 0)
+
+[node name="1" type="AnimatedSprite2D" parent="UI/button"]
+position = Vector2(268, 585)
 sprite_frames = SubResource("SpriteFrames_75ify")
 animation = &"button"
 
-[node name="2" type="AnimatedSprite2D" parent="UI"]
-position = Vector2(480, 585)
+[node name="2" type="AnimatedSprite2D" parent="UI/button"]
+position = Vector2(464, 585)
 sprite_frames = SubResource("SpriteFrames_i41xk")
 animation = &"button"
 
-[node name="3" type="AnimatedSprite2D" parent="UI"]
-position = Vector2(666, 585)
+[node name="3" type="AnimatedSprite2D" parent="UI/button"]
+position = Vector2(660, 585)
 sprite_frames = SubResource("SpriteFrames_ntdly")
 animation = &"button"
 
-[node name="4" type="AnimatedSprite2D" parent="UI"]
-position = Vector2(848, 585)
+[node name="4" type="AnimatedSprite2D" parent="UI/button"]
+position = Vector2(860, 585)
 sprite_frames = SubResource("SpriteFrames_lietn")
 animation = &"button"
 
-[node name="sound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("95_11705")
-stream_paused = true
+[node name="menu" type="ReferenceRect" parent="UI"]
+offset_left = 157.0
+offset_top = 321.0
+offset_right = 994.0
+offset_bottom = 514.0
+border_color = Color(1, 1, 1, 1)
+border_width = 11.0
+
+[node name="menu_text" type="RichTextLabel" parent="UI/menu"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 30.0
+offset_right = 618.0
+offset_bottom = 147.0
+theme_override_font_sizes/normal_font_size = 30

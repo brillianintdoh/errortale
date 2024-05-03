@@ -32,6 +32,7 @@ namespace godot {
             ResourceLoader *res;
             JSON *json;
             Variant data_json;
+            Variant tools_json;
             TextureRect* background;
             AudioStreamPlayer* sound;
     };
