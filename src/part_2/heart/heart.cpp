@@ -18,8 +18,8 @@ void Heart::_physics_process(double delta) {
         i.is_action_pressed("ui_right") - i.is_action_pressed("ui_left"),
         i.is_action_pressed("ui_down") - i.is_action_pressed("ui_up")
     );
-
     vec = input_vec * speed;
+
     set_velocity(vec);
     move_and_slide();
 }
