@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=3 uid="uid://byqohyhv4863s"]
+[gd_scene load_steps=106 format=3 uid="uid://byqohyhv4863s"]
 
 [ext_resource type="Texture2D" uid="uid://4mwrwo2b5a7j" path="res://img/sans/battle/sans_000.png" id="1_x2nri"]
 [ext_resource type="Texture2D" uid="uid://dpwl3nc7jdsy6" path="res://img/sans/battle/sans_001.png" id="2_7iih3"]
@@ -95,6 +95,7 @@
 [ext_resource type="Texture2D" uid="uid://1osfvvtqwiis" path="res://img/button/4.png" id="93_40a5e"]
 [ext_resource type="Texture2D" uid="uid://tmt4y87jyilf" path="res://img/button/4_.png" id="94_xdqc4"]
 [ext_resource type="AudioStream" uid="uid://4egtb4uqio4j" path="res://data/battle/sound/start.mp3" id="95_11705"]
+[ext_resource type="FontFile" uid="uid://d4kuyjcteyvro" path="res://data/font/sans_font.ttf" id="96_urxj7"]
 
 [sub_resource type="Gradient" id="Gradient_8matt"]
 
@@ -371,7 +372,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("85_b2471")
 }],
-"loop": true,
+"loop": false,
 "name": &"sans_start",
 "speed": 15.0
 }]
@@ -474,7 +475,7 @@ shape = SubResource("RectangleShape2D_wdnip")
 position = Vector2(564, 145)
 scale = Vector2(0.805, 0.840237)
 sprite_frames = SubResource("SpriteFrames_edobv")
-animation = &"sans_page1"
+animation = &"sans_start"
 
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(578, 325)
@@ -482,7 +483,7 @@ rotation = 0.0291667
 skew = 0.136723
 
 [node name="Heart" parent="." instance=ExtResource("86_kj7bd")]
-position = Vector2(570.592, 409.67)
+position = Vector2(577.259, 433.075)
 
 [node name="sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("95_11705")
@@ -528,3 +529,19 @@ offset_top = 30.0
 offset_right = 618.0
 offset_bottom = 147.0
 theme_override_font_sizes/normal_font_size = 30
+
+[node name="tools" type="Control" parent="UI/menu"]
+visible = false
+anchors_preset = 0
+offset_right = 838.0
+offset_bottom = 190.0
+
+[node name="tools_1" type="RichTextLabel" parent="UI/menu/tools"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 25.0
+offset_right = 242.0
+offset_bottom = 71.0
+theme_override_fonts/normal_font = ExtResource("96_urxj7")
+theme_override_font_sizes/normal_font_size = 27
+text = "* 파이"
