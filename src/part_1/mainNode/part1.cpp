@@ -46,6 +46,7 @@ void Part1::battle_start() {
     }else {
         last_corridor->set_z_index(-2);
         heart->set_global_position(user->get_global_position());
+        heart->set_z_index(15);
         heart->set_visible(true);
     }
 }

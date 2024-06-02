@@ -42,7 +42,7 @@ void Part2::shake(double delta) {
 void Part2::black_scene(double delta) {
     sleep_b+=delta;
 
-    if(wait[1] >= sleep_b) {
+    if(wait[2] >= sleep_b) {
         background->set_z_index(5);
         sleep_b = 0;
     }else {
