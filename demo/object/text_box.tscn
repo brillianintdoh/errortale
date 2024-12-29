@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://6mt2lcw3ws6t"]
+
+[ext_resource type="Texture2D" uid="uid://r1he65bv27dm" path="res://assets/text.png" id="1_py37e"]
+[ext_resource type="Texture2D" uid="uid://c2dpg151ukdq8" path="res://assets/sans/sans_head_1.png" id="2_rl5v7"]
+
+[node name="TextBox" type="TextBox"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="window" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 704.0
+offset_bottom = 193.0
+texture = ExtResource("1_py37e")
+expand_mode = 1
+
+[node name="head" type="TextureRect" parent="window"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 44.0
+offset_right = 157.0
+offset_bottom = 140.0
+texture = ExtResource("2_rl5v7")
+expand_mode = 1
+
+[node name="text" type="RichTextLabel" parent="window"]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 36.0
+offset_right = 649.0
+offset_bottom = 150.0
+tab_size = 3
