@@ -98,7 +98,7 @@ offset_bottom = 298.0
 grow_vertical = 2
 
 [node name="btn_2" type="Sprite2D" parent="gameTitle/ui"]
-position = Vector2(-199.5, 163)
+position = Vector2(-200, 163)
 scale = Vector2(0.746201, 0.724)
 texture = ExtResource("4_1urhs")
 
@@ -111,7 +111,7 @@ texture = ExtResource("5_8culx")
 visible = false
 scale = Vector2(4.644, 4.62)
 sprite_frames = SubResource("SpriteFrames_kuvvo")
-frame_progress = 0.487387
+frame_progress = 0.172158
 speed_scale = 3.0
 
 [node name="sans" type="Node2D" parent="."]

@@ -11,8 +11,12 @@ namespace godot {
             static void _bind_methods();
 
         private:
+            std::vector<Ref<Texture2D>> heads;
             TextureRect* head;
             RichTextLabel* text;
+            Variant json;
+            int lenght, index, isFirst, time;
+            double times;
 
         public:
             TextBox();
@@ -20,6 +24,8 @@ namespace godot {
 
             void _process(double delta) override;
             void _ready() override;
+
+            void nextText();
     };
 }
 

@@ -1,5 +1,4 @@
 #include "mainNode.h"
-#include<godot_cpp/classes/resource_loader.hpp>
 #include<godot_cpp/classes/input.hpp>
 #include<godot_cpp/classes/scene_tree.hpp>
 #include "../../env/env.h"
@@ -21,8 +20,8 @@ void MainNode::init() {
     Object::cast_to<Sprite2D>(get_node_internal("last_corridor"))->set_visible(false);
 
     for(int i=1; i <= btn_lengtn; i++) {
-        Ref<Texture2D> texture = ResourceLoader::get_singleton()->load("res://assets/button/btn_"+String::num(i)+".png");
-        Ref<Texture2D> texture_on = ResourceLoader::get_singleton()->load("res://assets/button/btnOn_"+String::num(i)+".png");
+        Ref<Texture2D> texture = resource_loader->load("res://assets/button/btn_"+String::num(i)+".png");
+        Ref<Texture2D> texture_on = resource_loader->load("res://assets/button/btnOn_"+String::num(i)+".png");
         Sprite2D* btn = Object::cast_to<Sprite2D>(get_node_internal("gameTitle/ui/btn_"+String::num(i)));
         Vector2 vec = btn->get_position();
         vec.x -= 200+(i*130);
@@ -40,12 +39,14 @@ void MainNode::init() {
 }
 
 void MainNode::_ready() {
+    resource_loader = ResourceLoader::get_singleton();
     camera = Object::cast_to<Camera2D>(get_node_internal("camera"));
     ui = Object::cast_to<Control>(get_node_internal("gameTitle/ui"));
     title = Object::cast_to<Sprite2D>(get_node_internal("gameTitle/title"));
     effect = Object::cast_to<AnimatedSprite2D>(get_node_internal("gameTitle/errorEffect"));
     background = Object::cast_to<TextureRect>(get_node_internal("background"));
     sans = Object::cast_to<Sprite2D>(get_node_internal("sans/sprite"));
+    resource_loader = ResourceLoader::get_singleton();
     window = get_window();
 
     init();

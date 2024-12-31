@@ -5,6 +5,7 @@
 #include<godot_cpp/classes/control.hpp>
 #include<godot_cpp/classes/animated_sprite2d.hpp>
 #include<godot_cpp/classes/texture_rect.hpp>
+#include<godot_cpp/classes/resource_loader.hpp>
 namespace godot {
     class MainNode : public Node2D {
         GDCLASS(MainNode, Node2D);
@@ -22,6 +23,7 @@ namespace godot {
             Control* ui;
             AnimatedSprite2D* effect;
             TextureRect* background;
+            ResourceLoader* resource_loader;
             Sprite2D* sans;
 
         public:
