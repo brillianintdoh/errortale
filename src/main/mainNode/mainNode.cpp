@@ -89,11 +89,13 @@ void MainNode::_process(double delta) {
         }
     }else if(isBattle) {
         background->set_z_index(2);
-        Node2D* node = Object::cast_to<Node2D>(get_node_internal("sans"));
-        node->set_visible(true);
-        Vector2 user_pos = camera->get_global_position();
-        node->set_global_position(user_pos);
-        sans->set_global_position(user_pos + Vector2(window->get_size().width/3, 0));
+        if(isBattle == 2) {
+            Node2D* node = Object::cast_to<Node2D>(get_node_internal("sans"));
+            node->set_visible(true);
+            Vector2 user_pos = camera->get_global_position();
+            node->set_global_position(user_pos);
+            sans->set_global_position(user_pos + Vector2(window->get_size().width/3, 0));
+        }
     }
 }
 

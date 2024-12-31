@@ -12,6 +12,7 @@ namespace godot {
         private:
             AnimatedSprite2D* animated;
             int isMove;
+            double start_time;
         
         public:
             UserNode();
