@@ -5,10 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://ca8uvfgidunjq" path="res://assets/logo.png" id="3_lrxj6"]
 [ext_resource type="Texture2D" uid="uid://dvwgym7kvsi73" path="res://assets/button/btn_2.png" id="4_1urhs"]
 [ext_resource type="Texture2D" uid="uid://ct6gn46jx8slm" path="res://assets/button/btnOn_1.png" id="5_8culx"]
-[ext_resource type="Texture2D" uid="uid://cl3fy8hqvgx63" path="res://assets/effect/1/error_effect-0.png" id="6_w50cr"]
-[ext_resource type="Texture2D" uid="uid://d02aolm7n8thm" path="res://assets/effect/1/error_effect-1.png" id="7_j8it5"]
-[ext_resource type="Texture2D" uid="uid://1q3ujryfqr4m" path="res://assets/effect/1/error_effect-2.png" id="8_6noht"]
-[ext_resource type="Texture2D" uid="uid://du01ei73jfcnu" path="res://assets/effect/1/error_effect-3.png" id="9_sb113"]
+[ext_resource type="Texture2D" uid="uid://cl3fy8hqvgx63" path="res://assets/effect/3/error_effect-0.png" id="6_w50cr"]
+[ext_resource type="Texture2D" uid="uid://d02aolm7n8thm" path="res://assets/effect/3/error_effect-1.png" id="7_j8it5"]
+[ext_resource type="Texture2D" uid="uid://1q3ujryfqr4m" path="res://assets/effect/3/error_effect-2.png" id="8_6noht"]
+[ext_resource type="Texture2D" uid="uid://du01ei73jfcnu" path="res://assets/effect/3/error_effect-3.png" id="9_sb113"]
 [ext_resource type="Texture2D" uid="uid://bwd5ahqalv4xx" path="res://assets/sans/sans.png" id="10_egky1"]
 [ext_resource type="PackedScene" uid="uid://6mt2lcw3ws6t" path="res://object/text_box.tscn" id="11_5chal"]
 
@@ -98,7 +98,7 @@ offset_bottom = 298.0
 grow_vertical = 2
 
 [node name="btn_2" type="Sprite2D" parent="gameTitle/ui"]
-position = Vector2(-200, 163)
+position = Vector2(-199.5, 163)
 scale = Vector2(0.746201, 0.724)
 texture = ExtResource("4_1urhs")
 
@@ -111,7 +111,7 @@ texture = ExtResource("5_8culx")
 visible = false
 scale = Vector2(4.644, 4.62)
 sprite_frames = SubResource("SpriteFrames_kuvvo")
-frame_progress = 0.172158
+frame_progress = 0.765356
 speed_scale = 3.0
 
 [node name="sans" type="Node2D" parent="."]
