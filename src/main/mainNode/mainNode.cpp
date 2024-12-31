@@ -73,7 +73,7 @@ void MainNode::_process(double delta) {
 
 
         if(isON) {
-            // on(delta);
+            on(delta);
         }else {
             if(start_time >= 5) {
                 Vector2 vec_title = title->get_position();
