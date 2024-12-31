@@ -21,6 +21,7 @@ void TextBox::_ready() {
     json = JSON::parse_string(file->get_as_text());
     head = Object::cast_to<TextureRect>(get_node_internal("window/head"));
     text = Object::cast_to<RichTextLabel>(get_node_internal("window/text"));
+    error_start = Object::cast_to<AnimatedSprite2D>(get_node_internal("errorStart"));
     ResourceLoader* resource_loader = ResourceLoader::get_singleton();
 
     for(int i=1; i <= 2; i++) {
@@ -33,7 +34,7 @@ void TextBox::_ready() {
 }
 
 void TextBox::_process(double delta) {
-    if(isBattle == 2) {
+    if(isSans == 2) {
         Input& i = *Input::get_singleton();
         if(i.is_action_pressed("ui_select") || i.is_action_pressed("ui_accept") || i.is_key_pressed(KEY_Z)) {
             nextText();
@@ -49,6 +50,11 @@ void TextBox::_process(double delta) {
             if(time <= times) {
                 times = 0;
                 text->set_visible_ratio(ratio+delta);
+
+                if(lenght <= index) {
+                    error_start->set_visible(true);
+                    error_start->play();
+                }
             }else {
                 times+=delta;
             }
@@ -57,8 +63,7 @@ void TextBox::_process(double delta) {
 }
 
 void TextBox::nextText() {
-    if(lenght <= index) {
-    }else {
+    if(lenght > index) {
         text->set_visible_ratio(0);
         text->set_text(json.get(index).get("text"));
         head->set_texture(heads[json.get(index).get("head")]);

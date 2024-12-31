@@ -6,6 +6,6 @@ using namespace godot;
 
 extern Camera2D* camera;
 extern Window* window;
-extern int isStart, isBattle;
+extern int isStart, isSans, isGameStart;
 
 #endif

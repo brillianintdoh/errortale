@@ -53,6 +53,9 @@ void MainNode::_ready() {
 }
 
 void MainNode::_process(double delta) {
+    if(isGameStart) {
+    }
+
     if(!isStart) {
         for(int i=0; i < btn_lengtn; i++) {
             Vector2 vec = btns[i]->get_position();
@@ -70,7 +73,7 @@ void MainNode::_process(double delta) {
 
 
         if(isON) {
-            on(delta);
+            // on(delta);
         }else {
             if(start_time >= 5) {
                 Vector2 vec_title = title->get_position();
@@ -88,9 +91,9 @@ void MainNode::_process(double delta) {
                 start_time += delta;
             }
         }
-    }else if(isBattle) {
+    }else if(isSans) {
         background->set_z_index(2);
-        if(isBattle == 2) {
+        if(isSans == 2) {
             Node2D* node = Object::cast_to<Node2D>(get_node_internal("sans"));
             node->set_visible(true);
             Vector2 user_pos = camera->get_global_position();

@@ -21,16 +21,16 @@ void UserNode::_physics_process(double delta) {
     if(!isStart) return;
 
     Vector2 pos = get_position();
-    if(pos.x > 1000 || isBattle) {
+    if(pos.x > 1000 || isSans) {
         if(start_time > 5) {
             isMove = false;
             animated->play("right");
             animated->stop();
             animated->set_frame(0);
             set_global_position(camera->get_global_position() - Vector2(window->get_size().width/3, 20));
-            isBattle = 2;
+            isSans = 2;
         }else {
-            isBattle = true;
+            isSans = true;
             set_z_index(3);
             start_time+=delta;
         }

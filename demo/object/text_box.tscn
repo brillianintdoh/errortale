@@ -1,9 +1,53 @@
-[gd_scene load_steps=5 format=3 uid="uid://6mt2lcw3ws6t"]
+[gd_scene load_steps=15 format=3 uid="uid://6mt2lcw3ws6t"]
 
 [ext_resource type="Texture2D" uid="uid://r1he65bv27dm" path="res://assets/text.png" id="1_py37e"]
 [ext_resource type="Texture2D" uid="uid://c2dpg151ukdq8" path="res://assets/sans/sans_head_1.png" id="2_rl5v7"]
 [ext_resource type="FontFile" uid="uid://c51gtfr0dlvgg" path="res://assets/font/sans_korean.ttf" id="3_pquiu"]
 [ext_resource type="FontFile" uid="uid://svgf5uuafpnu" path="res://assets/font/sans.ttf" id="4_pdp0c"]
+[ext_resource type="Texture2D" uid="uid://em7yb8ffv7pj" path="res://assets/effect/1/glitch_1.png" id="5_o6csf"]
+[ext_resource type="Texture2D" uid="uid://cgkxufx1lbvf4" path="res://assets/effect/1/glitch_2.png" id="6_gxme8"]
+[ext_resource type="Texture2D" uid="uid://dkbahbc7mro2g" path="res://assets/effect/1/glitch_3.png" id="7_yixsx"]
+[ext_resource type="Texture2D" uid="uid://cpqbbroupk0ib" path="res://assets/effect/1/glitch_4.png" id="8_80be3"]
+[ext_resource type="Texture2D" uid="uid://du20d15pfklj3" path="res://assets/effect/1/glitch_5.png" id="9_ghk62"]
+[ext_resource type="Texture2D" uid="uid://d0wkigw47dyu1" path="res://assets/effect/1/glitch_6.png" id="10_o5es7"]
+[ext_resource type="Texture2D" uid="uid://l8k8fcnwudpy" path="res://assets/effect/1/glitch_7.png" id="11_y3mp4"]
+[ext_resource type="Texture2D" uid="uid://dpgq4258mun5u" path="res://assets/effect/1/glitch_8.png" id="12_ufboj"]
+[ext_resource type="Texture2D" uid="uid://dpmyjq6be3vt2" path="res://assets/effect/1/glitch_9.png" id="13_hry4e"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3wpug"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_o6csf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gxme8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_yixsx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_80be3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ghk62")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_o5es7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_y3mp4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ufboj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_hry4e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="TextBox" type="TextBox"]
 offset_right = 40.0
@@ -37,3 +81,12 @@ theme_override_font_sizes/normal_font_size = 30
 tab_size = 3
 visible_characters = 0
 visible_ratio = 0.0
+
+[node name="errorStart" type="AnimatedSprite2D" parent="."]
+visible = false
+z_index = 3
+position = Vector2(403, 25)
+rotation = 1.5708
+scale = Vector2(4.08063, 4.89401)
+sprite_frames = SubResource("SpriteFrames_3wpug")
+speed_scale = 2.8
