@@ -54,6 +54,7 @@ void TextBox::_process(double delta) {
                 if(lenght <= index) {
                     error_start->set_visible(true);
                     error_start->play();
+                    isGameStart = true;
                 }
             }else {
                 times+=delta;

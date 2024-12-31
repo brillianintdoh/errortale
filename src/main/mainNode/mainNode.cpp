@@ -54,6 +54,7 @@ void MainNode::_ready() {
 
 void MainNode::_process(double delta) {
     if(isGameStart) {
+        get_tree()->change_scene_to_file("res://scene/sans.tscn");
     }
 
     if(!isStart) {

@@ -50,6 +50,7 @@ offset_top = -1906.0
 offset_right = 4236.0
 offset_bottom = 2324.0
 texture = SubResource("CurveTexture_8j6k2")
+metadata/_edit_lock_ = true
 
 [node name="UserNode" parent="." instance=ExtResource("2_cdybx")]
 visible = false
@@ -96,9 +97,10 @@ offset_top = -50.0
 offset_right = 252.0
 offset_bottom = 298.0
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="btn_2" type="Sprite2D" parent="gameTitle/ui"]
-position = Vector2(-199.5, 163)
+position = Vector2(-200, 163)
 scale = Vector2(0.746201, 0.724)
 texture = ExtResource("4_1urhs")
 
@@ -108,9 +110,10 @@ scale = Vector2(0.746201, 0.724)
 texture = ExtResource("5_8culx")
 
 [node name="errorEffect" type="AnimatedSprite2D" parent="gameTitle"]
+visible = false
 scale = Vector2(4.644, 4.62)
 sprite_frames = SubResource("SpriteFrames_kuvvo")
-frame_progress = 0.000109358
+frame_progress = 0.775819
 speed_scale = 3.0
 
 [node name="sans" type="Node2D" parent="."]
