@@ -1,5 +1,6 @@
 #include "mainNode.h"
 #include "../../env/env.h"
+#include<godot_cpp/classes/audio_stream_player.hpp>
 using namespace godot;
 
 BattleNode::BattleNode() {
@@ -23,7 +24,11 @@ void BattleNode::_ready() {
 }
 
 void BattleNode::init() {
+    audio["noise"] = Object::cast_to<AudioStreamPlayer>(get_node_internal("sound/start_noise"));
+    audio["start"] = Object::cast_to<AudioStreamPlayer>(get_node_internal("sound/battleStart"));
+
     isStart = false;
+    isGameStart = false;
     background->set_z_index(3);
     heart->set_z_index(4);
     heart->set_global_position(camera->get_global_position() - Vector2(window->get_size().width/3, 20));
@@ -44,11 +49,17 @@ void BattleNode::start(double delta) {
         if(times >= 0.2) {
             times = 0;
             background->set_z_index(3);
+            Object::cast_to<AudioStreamPlayer>(audio["noise"])->play();
         }else {
             times += delta;
             background->set_z_index(5);
         }
     }else {
+        if(!is) {
+            Object::cast_to<AudioStreamPlayer>(audio["start"])->play();
+            is = true;
+        }
+
         Vector2 vec = heart->get_global_position();
         if(vec.x < -0.4 && vec.y < -0.4) {
             background->set_z_index(3);
@@ -56,7 +67,7 @@ void BattleNode::start(double delta) {
             heart->set_global_position(new_pos);
             times = 0;
         }else {
-            if(times >= 0.5) {
+            if(times >= 0.3) {
                 times = 0;
                 cool = 0;
                 isStart = true;

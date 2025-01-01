@@ -3,7 +3,7 @@
 #include<godot_cpp/classes/control.hpp>
 #include<godot_cpp/classes/texture_rect.hpp>
 #include<godot_cpp/classes/rich_text_label.hpp>
-#include<godot_cpp/classes/animated_sprite2d.hpp>
+#include<godot_cpp/classes/audio_stream_player.hpp>
 namespace godot {
     class TextBox : public Control {
         GDCLASS(TextBox, Control);
@@ -16,9 +16,9 @@ namespace godot {
             TextureRect* head;
             RichTextLabel* text;
             Variant json;
-            AnimatedSprite2D* error_start;
+            AudioStreamPlayer* sound;
             int lenght, index, isFirst, time;
-            double times;
+            double times, lastRatio;
 
         public:
             TextBox();

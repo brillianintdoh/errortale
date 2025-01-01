@@ -10,6 +10,7 @@ TextBox::TextBox() {
     index = 0;
     times = 0;
     isFirst = true;
+    lastRatio = 0.0f;
 }
 
 TextBox::~TextBox() {}
@@ -21,7 +22,7 @@ void TextBox::_ready() {
     json = JSON::parse_string(file->get_as_text());
     head = Object::cast_to<TextureRect>(get_node_internal("window/head"));
     text = Object::cast_to<RichTextLabel>(get_node_internal("window/text"));
-    error_start = Object::cast_to<AnimatedSprite2D>(get_node_internal("errorStart"));
+    sound = Object::cast_to<AudioStreamPlayer>(get_node_internal("sound"));
     ResourceLoader* resource_loader = ResourceLoader::get_singleton();
 
     for(int i=1; i <= 2; i++) {
@@ -50,16 +51,13 @@ void TextBox::_process(double delta) {
             if(time <= times) {
                 times = 0;
                 text->set_visible_ratio(ratio+delta);
+                if(floor(ratio * text->get_text().length()) > floor(lastRatio * text->get_text().length())) sound->play();
 
-                if(lenght <= index) {
-                    error_start->set_visible(true);
-                    error_start->play();
-                    isGameStart = true;
-                }
+                lastRatio = ratio;
             }else {
                 times+=delta;
             }
-        }
+        }else if(lenght <= index) isGameStart = true;
     }
 }
 

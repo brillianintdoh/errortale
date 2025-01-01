@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://cth7kf3t5wmum"]
+[gd_scene load_steps=75 format=3 uid="uid://cth7kf3t5wmum"]
 
 [ext_resource type="Texture2D" uid="uid://caqnxomuwh6kf" path="res://assets/sans/start/sans_start_00.png" id="1_y3acs"]
 [ext_resource type="Texture2D" uid="uid://djffcmgw6kgn" path="res://assets/sans/start/sans_start_01.png" id="2_5aphy"]
@@ -63,6 +63,8 @@
 [ext_resource type="FontFile" uid="uid://birrn6ladcq52" path="res://assets/font/ut-hp-font.otf" id="61_ad15w"]
 [ext_resource type="FontFile" uid="uid://2ru5bojqmjsk" path="res://assets/font/ow_hud.ttf" id="62_snqht"]
 [ext_resource type="FontFile" uid="uid://86hm7hgnicyv" path="res://assets/font/health.ttf" id="63_u1xp4"]
+[ext_resource type="AudioStream" uid="uid://ddme2725xdyrp" path="res://assets/sound/battle/battleStart.wav" id="64_2mjxx"]
+[ext_resource type="AudioStream" uid="uid://bul1kqm6ca7t2" path="res://assets/sound/battle/start_noise.wav" id="65_psstp"]
 
 [sub_resource type="CurveTexture" id="CurveTexture_0366t"]
 texture_mode = 1
@@ -295,7 +297,7 @@ polygon = PackedVector2Array(135.62, -87.3973, 136.19, 87.3973, -136.19, 86.9433
 
 [node name="HeartNode" type="HeartNode" parent="."]
 z_index = 4
-position = Vector2(-15.9988, -200)
+position = Vector2(-496, -256)
 
 [node name="Sprite2D" type="Sprite2D" parent="HeartNode"]
 scale = Vector2(0.266, 0.252)
@@ -371,3 +373,11 @@ offset_bottom = 520.0
 theme_override_fonts/font = ExtResource("63_u1xp4")
 theme_override_font_sizes/font_size = 75
 text = "chara"
+
+[node name="sound" type="Node" parent="."]
+
+[node name="battleStart" type="AudioStreamPlayer" parent="sound"]
+stream = ExtResource("64_2mjxx")
+
+[node name="start_noise" type="AudioStreamPlayer" parent="sound"]
+stream = ExtResource("65_psstp")
