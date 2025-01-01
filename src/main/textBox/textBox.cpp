@@ -47,7 +47,7 @@ void TextBox::_process(double delta) {
         }
 
         float ratio = text->get_visible_ratio();
-        if(1 >= ratio) {
+        if(1 > ratio) {
             if(time <= times) {
                 times = 0;
                 text->set_visible_ratio(ratio+delta);
