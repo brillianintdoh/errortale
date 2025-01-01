@@ -44,7 +44,7 @@ void BattleNode::_process(double delta) {
 }
 
 void BattleNode::start(double delta) {
-    if(cool <= 3) {
+    if(cool <= 2) {
         cool+=delta;
         if(times >= 0.2) {
             times = 0;
@@ -67,7 +67,7 @@ void BattleNode::start(double delta) {
             heart->set_global_position(new_pos);
             times = 0;
         }else {
-            if(times >= 0.3) {
+            if(times >= 1) {
                 times = 0;
                 cool = 0;
                 isStart = true;
