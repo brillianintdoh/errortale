@@ -59,7 +59,7 @@ void BattleNode::_process(double delta) {
         sans->play("page_1");
         isStart = 2;
     }else if(!isStart) {
-        // start(delta); 
+        start(delta); 
     }
 
     if(times >= 6.2 && is == 1) {
