@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://cth7kf3t5wmum"]
+[gd_scene load_steps=108 format=3 uid="uid://cth7kf3t5wmum"]
 
 [ext_resource type="Texture2D" uid="uid://caqnxomuwh6kf" path="res://assets/sans/start/sans_start_00.png" id="1_y3acs"]
 [ext_resource type="Texture2D" uid="uid://djffcmgw6kgn" path="res://assets/sans/start/sans_start_01.png" id="2_5aphy"]
@@ -54,17 +54,50 @@
 [ext_resource type="Texture2D" uid="uid://dbm47e1yx6kob" path="res://assets/sans/start/sans_start_51.png" id="52_do36k"]
 [ext_resource type="Texture2D" uid="uid://bgvovg8aqvws0" path="res://assets/sans/start/sans_start_52.png" id="53_yavnx"]
 [ext_resource type="Texture2D" uid="uid://bkn0stdbvjjkf" path="res://assets/sans/start/sans_start_53.png" id="54_wqklp"]
+[ext_resource type="Texture2D" uid="uid://cdcfwo1qs6qda" path="res://assets/sans/battle/sans_000.png" id="55_g1srg"]
 [ext_resource type="Texture2D" uid="uid://r1he65bv27dm" path="res://assets/text.png" id="55_x3y46"]
 [ext_resource type="Texture2D" uid="uid://ck5ktxw66vpdx" path="res://assets/user/battle/red.png" id="56_5byvi"]
+[ext_resource type="Texture2D" uid="uid://ca0cwq4vvhkk7" path="res://assets/sans/battle/sans_001.png" id="56_nsysp"]
+[ext_resource type="Texture2D" uid="uid://dkeux3evq8dss" path="res://assets/sans/battle/sans_002.png" id="57_nt73p"]
 [ext_resource type="Texture2D" uid="uid://bau1ke3kea4lx" path="res://assets/button/battle/1.png" id="57_xc45x"]
+[ext_resource type="Texture2D" uid="uid://ck8wplsagy0m4" path="res://assets/sans/battle/sans_003.png" id="58_hsldw"]
 [ext_resource type="Texture2D" uid="uid://5orskktfh25e" path="res://assets/button/battle/2.png" id="58_xmevh"]
+[ext_resource type="Texture2D" uid="uid://daciuqdh0gq3o" path="res://assets/sans/battle/sans_004.png" id="59_nqsiu"]
 [ext_resource type="Texture2D" uid="uid://8bk5yo6nuwbx" path="res://assets/button/battle/3.png" id="59_uysaj"]
+[ext_resource type="Texture2D" uid="uid://drml3m4poqylh" path="res://assets/sans/battle/sans_005.png" id="60_pssbv"]
 [ext_resource type="Texture2D" uid="uid://ns0gl1rlu71g" path="res://assets/button/battle/4.png" id="60_v8fbd"]
 [ext_resource type="FontFile" uid="uid://birrn6ladcq52" path="res://assets/font/ut-hp-font.otf" id="61_ad15w"]
+[ext_resource type="Texture2D" uid="uid://bftw6dtnbsq53" path="res://assets/sans/battle/sans_006.png" id="61_hfka8"]
+[ext_resource type="Texture2D" uid="uid://dsb48km7v6b28" path="res://assets/sans/battle/sans_007.png" id="62_4evhx"]
 [ext_resource type="FontFile" uid="uid://2ru5bojqmjsk" path="res://assets/font/ow_hud.ttf" id="62_snqht"]
+[ext_resource type="Texture2D" uid="uid://e5r1ku50nycs" path="res://assets/sans/battle/sans_008.png" id="63_mykdc"]
 [ext_resource type="FontFile" uid="uid://86hm7hgnicyv" path="res://assets/font/health.ttf" id="63_u1xp4"]
 [ext_resource type="AudioStream" uid="uid://ddme2725xdyrp" path="res://assets/sound/battle/battleStart.wav" id="64_2mjxx"]
+[ext_resource type="Texture2D" uid="uid://ev8r00wmvbrr" path="res://assets/sans/battle/sans_009.png" id="64_7ndxd"]
+[ext_resource type="Texture2D" uid="uid://x2nmvksh122n" path="res://assets/sans/battle/sans_010.png" id="65_l45ye"]
 [ext_resource type="AudioStream" uid="uid://bul1kqm6ca7t2" path="res://assets/sound/battle/start_noise.wav" id="65_psstp"]
+[ext_resource type="AudioStream" uid="uid://bb4m1a0mmoco1" path="res://assets/sound/battle/music/start.mp3" id="66_5l6o3"]
+[ext_resource type="Texture2D" uid="uid://djlxglq3rxv5p" path="res://assets/sans/battle/sans_011.png" id="66_wqv2v"]
+[ext_resource type="Texture2D" uid="uid://bqb0a23l52tfu" path="res://assets/sans/battle/sans_012.png" id="67_lk3jr"]
+[ext_resource type="Texture2D" uid="uid://csriwawqnn4v7" path="res://assets/sans/battle/sans_013.png" id="68_gy0ai"]
+[ext_resource type="Texture2D" uid="uid://bkagkf416t321" path="res://assets/sans/battle/sans_014.png" id="69_flg0m"]
+[ext_resource type="Texture2D" uid="uid://bfjln8bq27ilm" path="res://assets/sans/battle/sans_015.png" id="70_cou1m"]
+[ext_resource type="Texture2D" uid="uid://tg831mt1pmcq" path="res://assets/sans/battle/sans_016.png" id="71_a32ms"]
+[ext_resource type="Texture2D" uid="uid://btyh28r72sni1" path="res://assets/sans/battle/sans_017.png" id="72_hig7s"]
+[ext_resource type="Texture2D" uid="uid://bgp1n4u62b3aa" path="res://assets/sans/battle/sans_018.png" id="73_3hium"]
+[ext_resource type="Texture2D" uid="uid://bn0bbwt3ldviv" path="res://assets/sans/battle/sans_019.png" id="74_la2yq"]
+[ext_resource type="Texture2D" uid="uid://sa7kgxaedgb6" path="res://assets/sans/battle/sans_020.png" id="75_6th8v"]
+[ext_resource type="Texture2D" uid="uid://d3bptm2a830xj" path="res://assets/sans/battle/sans_021.png" id="76_tul0n"]
+[ext_resource type="Texture2D" uid="uid://ctrxvdxe8lkke" path="res://assets/sans/battle/sans_022.png" id="77_vsijd"]
+[ext_resource type="Texture2D" uid="uid://dsl41nclo16vd" path="res://assets/sans/battle/sans_023.png" id="78_fppbo"]
+[ext_resource type="Texture2D" uid="uid://cvnwdwoh15cin" path="res://assets/sans/battle/sans_024.png" id="79_s072q"]
+[ext_resource type="Texture2D" uid="uid://dhs4fqgdesf5m" path="res://assets/sans/battle/sans_025.png" id="80_hrqud"]
+[ext_resource type="Texture2D" uid="uid://crf0ixkpgb1bj" path="res://assets/sans/battle/sans_026.png" id="81_an8ym"]
+[ext_resource type="Texture2D" uid="uid://cl7o4d0ovvs03" path="res://assets/sans/battle/sans_027.png" id="82_bhko2"]
+[ext_resource type="Texture2D" uid="uid://b25cl7ux3arvs" path="res://assets/sans/battle/sans_028.png" id="83_10hxe"]
+[ext_resource type="Texture2D" uid="uid://bqdomrs3o264g" path="res://assets/sans/battle/sans_029.png" id="84_m41v6"]
+[ext_resource type="Texture2D" uid="uid://b07bkhv4scro3" path="res://assets/sans/battle/sans_030.png" id="85_b6llb"]
+[ext_resource type="AudioStream" uid="uid://csvptt1wtf6am" path="res://assets/sound/battle/music/sans.mp3" id="98_n1jds"]
 
 [sub_resource type="CurveTexture" id="CurveTexture_0366t"]
 texture_mode = 1
@@ -234,8 +267,106 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("54_wqklp")
 }],
-"loop": true,
+"loop": false,
 "name": &"battle_start",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("55_g1srg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_nsysp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_nt73p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_hsldw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_nqsiu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_pssbv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_hfka8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_4evhx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_mykdc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_7ndxd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_l45ye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_wqv2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_lk3jr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_gy0ai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_flg0m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_cou1m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_a32ms")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_hig7s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_3hium")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_la2yq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_6th8v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_tul0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_vsijd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_fppbo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_s072q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_hrqud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_an8ym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_bhko2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_10hxe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_m41v6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_b6llb")
+}],
+"loop": true,
+"name": &"page_1",
 "speed": 5.0
 }]
 
@@ -283,23 +414,27 @@ zoom = Vector2(0.3, 0.3)
 position = Vector2(-4, -856)
 scale = Vector2(2.02667, 2.01775)
 sprite_frames = SubResource("SpriteFrames_2nhqq")
-animation = &"battle_start"
-speed_scale = 2.0
+animation = &"page_1"
+speed_scale = 2.5
 
 [node name="frame" type="Sprite2D" parent="."]
 scale = Vector2(5.25735, 4.40517)
 texture = ExtResource("55_x3y46")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="frame"]
+[node name="frame_body" type="StaticBody2D" parent="frame"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="frame/StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="frame/frame_body"]
 polygon = PackedVector2Array(135.62, -87.3973, 136.19, 87.3973, -136.19, 86.9433, -136.38, -86.0352, -132.576, -83.7652, -131.245, 80.5871, 131.625, 81.4951, 130.484, -82.1761, -132.006, -83.0842, -137.141, -86.7163)
 
 [node name="HeartNode" type="HeartNode" parent="."]
 z_index = 4
-position = Vector2(-496, -256)
+position = Vector2(-591, -256)
+gravity_scale = 0.0
+lock_rotation = true
+contact_monitor = true
+max_contacts_reported = 3
 
-[node name="Sprite2D" type="Sprite2D" parent="HeartNode"]
+[node name="sprite" type="Sprite2D" parent="HeartNode"]
 scale = Vector2(0.266, 0.252)
 texture = ExtResource("56_5byvi")
 
@@ -307,6 +442,7 @@ texture = ExtResource("56_5byvi")
 shape = SubResource("RectangleShape2D_14rhy")
 
 [node name="buttons" type="Node2D" parent="."]
+visible = false
 
 [node name="button_1" type="Sprite2D" parent="buttons"]
 position = Vector2(-760, 670)
@@ -340,7 +476,7 @@ offset_left = -299.0
 offset_top = 439.0
 offset_right = 251.0
 offset_bottom = 519.0
-value = 10.0
+value = 100.0
 texture_under = SubResource("NoiseTexture2D_n2gcq")
 texture_progress = SubResource("NoiseTexture2D_a2fde")
 
@@ -381,3 +517,13 @@ stream = ExtResource("64_2mjxx")
 
 [node name="start_noise" type="AudioStreamPlayer" parent="sound"]
 stream = ExtResource("65_psstp")
+
+[node name="start" type="AudioStreamPlayer" parent="sound"]
+stream = ExtResource("66_5l6o3")
+
+[node name="sans" type="AudioStreamPlayer" parent="sound"]
+stream = ExtResource("98_n1jds")
+
+[connection signal="animation_finished" from="sans" to="." method="animated_start_end"]
+[connection signal="body_entered" from="HeartNode" to="HeartNode" method="onCollision"]
+[connection signal="finished" from="sound/start" to="." method="music_start_end"]
