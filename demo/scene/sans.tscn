@@ -1,16 +1,28 @@
-[gd_scene load_steps=108 format=3 uid="uid://cth7kf3t5wmum"]
+[gd_scene load_steps=121 format=3 uid="uid://cth7kf3t5wmum"]
 
+[ext_resource type="Texture2D" uid="uid://b7dv4san3p27f" path="res://assets/attack/gaster_blaster/blaster_00.png" id="1_vtycu"]
 [ext_resource type="Texture2D" uid="uid://caqnxomuwh6kf" path="res://assets/sans/start/sans_start_00.png" id="1_y3acs"]
 [ext_resource type="Texture2D" uid="uid://djffcmgw6kgn" path="res://assets/sans/start/sans_start_01.png" id="2_5aphy"]
+[ext_resource type="Texture2D" uid="uid://dtfxo4b3s8yb1" path="res://assets/attack/gaster_blaster/blaster_01.png" id="2_ekc8r"]
 [ext_resource type="Texture2D" uid="uid://c0tkcg8xnkic4" path="res://assets/sans/start/sans_start_02.png" id="3_bsc2m"]
+[ext_resource type="Texture2D" uid="uid://cbjc11x1comug" path="res://assets/attack/gaster_blaster/blaster_02.png" id="3_glwbg"]
 [ext_resource type="Texture2D" uid="uid://81m7b6h24etx" path="res://assets/sans/start/sans_start_03.png" id="4_5sgmp"]
+[ext_resource type="Texture2D" uid="uid://xabg0nou6jwf" path="res://assets/attack/gaster_blaster/blaster_03.png" id="4_bfjce"]
 [ext_resource type="Texture2D" uid="uid://c6jruvhkvxtqp" path="res://assets/sans/start/sans_start_04.png" id="5_ftnvh"]
+[ext_resource type="Texture2D" uid="uid://bwrv2itm2npw0" path="res://assets/attack/gaster_blaster/blaster_04.png" id="5_yjp1m"]
+[ext_resource type="Texture2D" uid="uid://c7wd4pkrcox74" path="res://assets/attack/gaster_blaster/blaster_05.png" id="6_mcb57"]
 [ext_resource type="Texture2D" uid="uid://dcqmkb4goj2su" path="res://assets/sans/start/sans_start_05.png" id="6_x201w"]
 [ext_resource type="Texture2D" uid="uid://douavqse3qtma" path="res://assets/sans/start/sans_start_06.png" id="7_pa3u2"]
+[ext_resource type="Texture2D" uid="uid://brl32hqqg1l6l" path="res://assets/attack/gaster_blaster/blaster_06.png" id="7_tkpl2"]
+[ext_resource type="Texture2D" uid="uid://cnkcutlcpgqmo" path="res://assets/attack/gaster_blaster/blaster_07.png" id="8_7xx4v"]
 [ext_resource type="Texture2D" uid="uid://bkmctmmsbkf0x" path="res://assets/sans/start/sans_start_07.png" id="8_ttmkh"]
 [ext_resource type="Texture2D" uid="uid://bimhp5xnigvwf" path="res://assets/sans/start/sans_start_08.png" id="9_1srdc"]
+[ext_resource type="Texture2D" uid="uid://t5ixnt083c4n" path="res://assets/attack/gaster_blaster/blaster_08.png" id="9_yd33e"]
 [ext_resource type="Texture2D" uid="uid://3afip5k7grbq" path="res://assets/sans/start/sans_start_09.png" id="10_u6evo"]
+[ext_resource type="Texture2D" uid="uid://png58yjwxr2i" path="res://assets/attack/gaster_blaster/blaster_09.png" id="10_vhf72"]
 [ext_resource type="Texture2D" uid="uid://68bqwwbd4omv" path="res://assets/sans/start/sans_start_10.png" id="11_e01yy"]
+[ext_resource type="Texture2D" uid="uid://dsfmfk333c8sp" path="res://assets/attack/gaster_blaster/blaster_10.png" id="11_wu540"]
+[ext_resource type="Texture2D" uid="uid://c4mobca7rkrqd" path="res://assets/attack/gaster_blaster/blaster_11.png" id="12_j0f86"]
 [ext_resource type="Texture2D" uid="uid://jvpygyswdlpq" path="res://assets/sans/start/sans_start_11.png" id="12_qfk87"]
 [ext_resource type="Texture2D" uid="uid://cfbcavq3modfm" path="res://assets/sans/start/sans_start_12.png" id="13_kbref"]
 [ext_resource type="Texture2D" uid="uid://7wxx38uregfk" path="res://assets/sans/start/sans_start_13.png" id="14_c008g"]
@@ -101,6 +113,50 @@
 
 [sub_resource type="CurveTexture" id="CurveTexture_0366t"]
 texture_mode = 1
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_clkgq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vtycu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ekc8r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_glwbg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bfjce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_yjp1m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mcb57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_tkpl2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_7xx4v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_yd33e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vhf72")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_wu540")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_j0f86")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2nhqq"]
 animations = [{
@@ -392,6 +448,7 @@ colors = PackedColorArray(0, 0, 0, 1, 1, 1, 0, 1)
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_6ch81"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_a2fde"]
+width = 550
 height = 80
 color_ramp = SubResource("Gradient_qehv6")
 noise = SubResource("FastNoiseLite_6ch81")
@@ -410,8 +467,17 @@ texture = SubResource("CurveTexture_0366t")
 position = Vector2(49, -236)
 zoom = Vector2(0.3, 0.3)
 
+[node name="sprite" type="Node2D" parent="."]
+position = Vector2(0, -856)
+
+[node name="gaster_blaster" type="AnimatedSprite2D" parent="sprite"]
+position = Vector2(3634, -1073)
+sprite_frames = SubResource("SpriteFrames_clkgq")
+frame_progress = 0.367121
+speed_scale = 2.5
+
 [node name="sans" type="AnimatedSprite2D" parent="."]
-position = Vector2(-4, -856)
+position = Vector2(0, -856)
 scale = Vector2(2.02667, 2.01775)
 sprite_frames = SubResource("SpriteFrames_2nhqq")
 animation = &"page_1"

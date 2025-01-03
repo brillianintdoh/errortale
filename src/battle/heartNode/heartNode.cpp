@@ -18,7 +18,7 @@ void HeartNode::_bind_methods() {
 
 void HeartNode::_ready() {
     sprite = Object::cast_to<Sprite2D>(get_node_internal("sprite"));
-    hpBar = Object::cast_to<TextureProgressBar>(get_node_internal("ui/hpBar"));
+    hpBar = Object::cast_to<TextureProgressBar>(get_node_internal("../ui/hpBar"));
 
     ResourceLoader* loader = ResourceLoader::get_singleton();
     hearts["red"] = loader->load("res://assets/user/battle/red.png");
@@ -38,7 +38,7 @@ void HeartNode::_physics_process(double delta) {
     if(isBlue) {
         curr += gravity * delta;
         if(isUP) curr.y += vec.y * 80.0f;
-        curr.x += vec.x * 40.0f;
+        curr.x += vec.x * 35.0f;
     }else curr = vec * 400.0f;
 
     if(isUP && i.is_action_pressed("ui_up")) {
