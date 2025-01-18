@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://6mt2lcw3ws6t"]
+
+[ext_resource type="Texture2D" uid="uid://r1he65bv27dm" path="res://assets/text.png" id="1_py37e"]
+[ext_resource type="Texture2D" uid="uid://dw6l517334x0s" path="res://assets/sans/head/sans_head_1.png" id="2_sxhao"]
+[ext_resource type="FontFile" uid="uid://c51gtfr0dlvgg" path="res://assets/font/sans_korean.ttf" id="3_pquiu"]
+[ext_resource type="FontFile" uid="uid://svgf5uuafpnu" path="res://assets/font/sans.ttf" id="4_pdp0c"]
+[ext_resource type="AudioStream" uid="uid://crtptjuasxnvw" path="res://assets/sound/main/sans.wav" id="5_55gk7"]
+
+[node name="TextBox" type="TextBox"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="window" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 704.0
+offset_bottom = 193.0
+texture = ExtResource("1_py37e")
+expand_mode = 1
+
+[node name="head" type="TextureRect" parent="window"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 44.0
+offset_right = 157.0
+offset_bottom = 140.0
+texture = ExtResource("2_sxhao")
+expand_mode = 1
+
+[node name="text" type="RichTextLabel" parent="window"]
+layout_mode = 0
+offset_left = 191.0
+offset_top = 44.0
+offset_right = 660.0
+offset_bottom = 158.0
+theme_override_fonts/normal_font = ExtResource("3_pquiu")
+theme_override_fonts/bold_font = ExtResource("4_pdp0c")
+theme_override_font_sizes/normal_font_size = 30
+tab_size = 3
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_55gk7")
