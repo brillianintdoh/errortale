@@ -95,7 +95,6 @@
 [ext_resource type="Texture2D" uid="uid://ev8r00wmvbrr" path="res://assets/sans/battle/sans_009.png" id="64_7ndxd"]
 [ext_resource type="Texture2D" uid="uid://x2nmvksh122n" path="res://assets/sans/battle/sans_010.png" id="65_l45ye"]
 [ext_resource type="AudioStream" uid="uid://bul1kqm6ca7t2" path="res://assets/sound/battle/start_noise.wav" id="65_psstp"]
-[ext_resource type="AudioStream" uid="uid://bb4m1a0mmoco1" path="res://assets/sound/battle/music/start.mp3" id="66_5l6o3"]
 [ext_resource type="Texture2D" uid="uid://djlxglq3rxv5p" path="res://assets/sans/battle/sans_011.png" id="66_wqv2v"]
 [ext_resource type="Texture2D" uid="uid://bqb0a23l52tfu" path="res://assets/sans/battle/sans_012.png" id="67_lk3jr"]
 [ext_resource type="Texture2D" uid="uid://csriwawqnn4v7" path="res://assets/sans/battle/sans_013.png" id="68_gy0ai"]
@@ -116,7 +115,6 @@
 [ext_resource type="Texture2D" uid="uid://b25cl7ux3arvs" path="res://assets/sans/battle/sans_028.png" id="83_10hxe"]
 [ext_resource type="Texture2D" uid="uid://bqdomrs3o264g" path="res://assets/sans/battle/sans_029.png" id="84_m41v6"]
 [ext_resource type="Texture2D" uid="uid://b07bkhv4scro3" path="res://assets/sans/battle/sans_030.png" id="85_b6llb"]
-[ext_resource type="AudioStream" uid="uid://csvptt1wtf6am" path="res://assets/sound/battle/music/sans.mp3" id="98_n1jds"]
 [ext_resource type="Texture2D" uid="uid://dq35g6ul77f71" path="res://assets/attack/true_knife/0.png" id="104_uo72m"]
 [ext_resource type="Texture2D" uid="uid://rt73g6hqeerl" path="res://assets/attack/true_knife/1.png" id="105_2dxgd"]
 [ext_resource type="AudioStream" uid="uid://boiwovv527u6m" path="res://assets/sound/bell.wav" id="105_3voh5"]
@@ -133,6 +131,8 @@
 [ext_resource type="AudioStream" uid="uid://bsxd3n7wtwois" path="res://assets/sound/menu_move.wav" id="123_fxwgk"]
 [ext_resource type="AudioStream" uid="uid://dewiuf2hejxl8" path="res://assets/sound/menu_select.wav" id="124_qohet"]
 [ext_resource type="AudioStream" uid="uid://dsnn1sw0vgv28" path="res://assets/sound/battle/heal.wav" id="132_04gbv"]
+[ext_resource type="Script" path="res://addons/audio_stream_player_clipper_2d/audio_stream_player_clipper_2d.gd" id="133_iujrw"]
+[ext_resource type="AudioStream" uid="uid://dn7cdb3jplyeg" path="res://assets/sound/battle/sans_song.mp3" id="134_knhbs"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y0x72"]
 shader = ExtResource("1_u3u54")
@@ -869,8 +869,12 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_nelkl")
 max_text_lines = 3
 auto_height = true
 text_overrun_behavior = 1
+item_count = 3
 max_columns = 3
 fixed_column_width = 500
+item_0/text = "파이"
+item_1/text = "컵라면"
+item_2/text = "크로케 롤"
 
 [node name="sound" type="Node" parent="."]
 
@@ -879,12 +883,6 @@ stream = ExtResource("64_2mjxx")
 
 [node name="start_noise" type="AudioStreamPlayer" parent="sound"]
 stream = ExtResource("65_psstp")
-
-[node name="start" type="AudioStreamPlayer" parent="sound"]
-stream = ExtResource("66_5l6o3")
-
-[node name="sans" type="AudioStreamPlayer" parent="sound"]
-stream = ExtResource("98_n1jds")
 
 [node name="hurt" type="AudioStreamPlayer" parent="sound"]
 stream = ExtResource("114_pwmjw")
@@ -919,7 +917,24 @@ sprite_frames = SubResource("SpriteFrames_7eln3")
 frame_progress = 0.546239
 speed_scale = 1.3
 
+[node name="song" type="Node" parent="."]
+
+[node name="start" type="Node2D" parent="song"]
+script = ExtResource("133_iujrw")
+end_time = 16.0
+apply_cut = true
+audio_stream = ExtResource("134_knhbs")
+volume_db = 20.0
+
+[node name="sans" type="Node2D" parent="song"]
+script = ExtResource("133_iujrw")
+start_time = 16.0
+end_time = 1000.0
+apply_cut = true
+audio_stream = ExtResource("134_knhbs")
+volume_db = 20.0
+
 [connection signal="body_entered" from="HeartNode" to="HeartNode" method="onCollision"]
-[connection signal="finished" from="sound/start" to="." method="music_start_end"]
 [connection signal="animation_finished" from="sans" to="." method="animated_start_end"]
 [connection signal="animation_finished" from="sans/attack" to="." method="attack_end"]
+[connection signal="finished" from="song/start" to="." method="music_next"]

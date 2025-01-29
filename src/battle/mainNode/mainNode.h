@@ -43,6 +43,8 @@ namespace godot {
             ItemList* item_list;
             Array json_text, json_item;
             vector<Vector2> frameVecs;
+            vector<Node2D*> songs;
+            int isSong;
 
             double times, cool, time_KARMA;
             int is, isAttack, isSelect, isMoveButton, part;
@@ -67,13 +69,15 @@ namespace godot {
             void loop(function<int(double delta)> fun);
 
             // 기본함수
+            void init();
             void start(double delta);
             void nextTurn();
 
             // finished 함수
             void animated_start_end();
-            void music_start_end();
+            void music_next();
             void attack_end();
+            void song_loop();
 
             // sprite 함수
             void set_gasterBlaster(Vector2 pos, Vector2 scale, float angle, float cool=3, int isLaunch=true);

@@ -29,14 +29,14 @@ void BattleNode::part1(double delta) {
     }else if(time1 < 6) {
         if(is1 != 3) return;
         set_frame(Vector2(3, 4.405), true, [this]() {
-            Vector2 scale = Vector2(1.5, 0.586);
-            bones1.push_back(set_bone2(Vector2(263.333, 187.568), Vector2(199.333, 111.291), scale, 50, 1.5));
-            bones1.push_back(set_bone2(Vector2(-2.667, 194.151), Vector2(69, 108.793), scale, -50, 1.5));
-            bones1.push_back(set_bone2(Vector2(29, -35.815), Vector2(101.333, 50.451), scale, -50, 1.5));
-            bones1.push_back(set_bone2(Vector2(246.333, -33.545), Vector2(176, 49.997), scale, 50, 1.5));
+            Vector2 scale = Vector2(1.184, 1.232);
+            bones1.push_back(set_bone2(Vector2(263.333, 187.568), Vector2(199.333, 111.291), scale, -50, 1.5));
+            bones1.push_back(set_bone2(Vector2(-2.667, 194.151), Vector2(67.667, 111.518), scale, 50, 1.5));
+            bones1.push_back(set_bone2(Vector2(29, -35.815), Vector2(70.333, 40.235), scale, 56, 1.5));
+            bones1.push_back(set_bone2(Vector2(246.333, -33.545), Vector2(192, 35.468), scale, -56, 1.5));
             is = 1;
         });
-        bones1.push_back(set_bone2(Vector2(136.968, -16.291), Vector2(136.968, 82.687), Vector2(1.5, 1), 90, 0.4));
+        bones1.push_back(set_bone2(Vector2(136.968, -16.291), Vector2(106.968, 82.687), Vector2(1.2, 1.2), 90, 0.4));
         is1 = 4;
     }else if(time1 < 9) {
         if(is == 1) {
@@ -88,9 +88,9 @@ void BattleNode::part2(double delta) {
     }else if(is == 1) {
         is = 2;
         sleep([this]() {
-            Vector2 scale = Vector2(1.8,1);
-            set_bone2(Vector2(332.346, -180.65), Vector2(-52.034, -51.865), scale, 0, 1, true);
-            set_bone2(Vector2(-32.034, -180.65), Vector2(320, -51.865), scale, 0, 1, true);
+            Vector2 scale = Vector2(2,2);
+            set_bone2(Vector2(367.104, -271.002), Vector2(-50.556, -187.461), scale, 0, 1, true);
+            set_bone2(Vector2(-71.439, -271.002), Vector2(316.057, -187.461), scale, 0, 1, true);
             sleep([this]() {
                 heart->set_blue(true, -10, 0);
                 Vector2 scale = Vector2(3,3);

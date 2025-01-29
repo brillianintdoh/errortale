@@ -1,8 +1,10 @@
 #include "mainNode.h"
 #include "../../env/env.h"
 
-void BattleNode::music_start_end() {
-    Object::cast_to<AudioStreamPlayer>(music["sans"])->play();
+void BattleNode::music_next() {
+    int song = db["song"];
+    songs[song++]->call("play");
+    db["song"] = song;
 }
 
 void BattleNode::animated_start_end() {
@@ -15,4 +17,7 @@ void BattleNode::animated_start_end() {
 
 void BattleNode::attack_end() {
     set_shader(3.6, 0.3, 0.5, 5, 0.15);
+}
+
+void BattleNode::song_loop() {
 }

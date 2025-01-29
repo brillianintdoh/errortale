@@ -1,9 +1,6 @@
 #include "mainNode.h"
 #include "../../env/env.h"
-#include<godot_cpp/classes/resource_loader.hpp>
 #include<godot_cpp/classes/input.hpp>
-#include<godot_cpp/classes/file_access.hpp>
-#include<godot_cpp/classes/json.hpp>
 using namespace godot;
 
 BattleNode::BattleNode() {
@@ -20,15 +17,17 @@ BattleNode::BattleNode() {
     db["item_index"] = 0;
     part = 1;
     isMoveButton = true;
+    isSong = true;
 }
 
 BattleNode::~BattleNode() {}
 
 void BattleNode::_bind_methods() {
-    ClassDB::bind_method(D_METHOD("music_start_end"), &BattleNode::music_start_end);
+    ClassDB::bind_method(D_METHOD("music_next"), &BattleNode::music_next);
     ClassDB::bind_method(D_METHOD("animated_start_end"), &BattleNode::animated_start_end);
     ClassDB::bind_method(D_METHOD("attack_end"), &BattleNode::attack_end);
     ClassDB::bind_method(D_METHOD("update_menu3"), &BattleNode::update_menu3);
+    ClassDB::bind_method(D_METHOD("song_loop"), &BattleNode::song_loop);
 }
 
 void BattleNode::_ready() {
@@ -57,32 +56,7 @@ void BattleNode::_ready() {
     audio["menu_move"] = Object::cast_to<AudioStreamPlayer>(get_node_internal("sound/menu_move"));
     audio["menu_select"] = Object::cast_to<AudioStreamPlayer>(get_node_internal("sound/menu_select"));
     audio["heal"] = Object::cast_to<AudioStreamPlayer>(get_node_internal("sound/heal"));
-    music["start"] = Object::cast_to<AudioStreamPlayer>(get_node_internal("sound/start"));
-    music["sans"] = Object::cast_to<AudioStreamPlayer>(get_node_internal("sound/sans"));
-
-    ResourceLoader* loader = ResourceLoader::get_singleton();
-    for(int i=1; i <= 4; i++) {
-        String num = String::num(i);
-        Ref<Texture2D> texture = loader->load("res://assets/button/battle/"+num+".png");
-        Ref<Texture2D> texture_on = loader->load("res://assets/button/battle/"+num+"_.png");
-        btn.push_back(texture);
-        btnON.push_back(texture_on);
-    }
-    Ref<FileAccess> text_file = FileAccess::open("res://data/text.json", FileAccess::READ);
-    Ref<FileAccess> item_file = FileAccess::open("res://data/items.json", FileAccess::READ);
-    json_text = JSON::parse_string(text_file->get_as_text());
-    json_item = JSON::parse_string(item_file->get_as_text());
-    for(int i=0; i < json_item.size(); i++) {
-        item_list->add_item(json_item[i].get("name"));
-    }
-
-    isStart = false;
-    background->set_z_index(3);
-    heart->set_z_index(4);
-    heart->set_global_position(camera->get_global_position() - Vector2(window->get_size().width, 20));
-    sans->play("page_1");
-    sans->stop();
-    sans->set_frame(0);
+    init();
 }
 
 int isS = 0, btnISCool = false;
@@ -267,7 +241,7 @@ void BattleNode::start(double delta) {
                 times = 0;
                 cool = 0;
                 isStart = true;
-                Object::cast_to<AudioStreamPlayer>(music["start"])->play();
+                music_next();
             }else {
                 times+=delta;
                 background->set_z_index(5);
