@@ -869,12 +869,8 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_nelkl")
 max_text_lines = 3
 auto_height = true
 text_overrun_behavior = 1
-item_count = 3
 max_columns = 3
 fixed_column_width = 500
-item_0/text = "파이"
-item_1/text = "컵라면"
-item_2/text = "크로케 롤"
 
 [node name="sound" type="Node" parent="."]
 
