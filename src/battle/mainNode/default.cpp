@@ -17,9 +17,6 @@ void BattleNode::init() {
     Ref<FileAccess> item_file = FileAccess::open("res://data/items.json", FileAccess::READ);
     json_text = JSON::parse_string(text_file->get_as_text());
     json_item = JSON::parse_string(item_file->get_as_text());
-    for(int i=0; i < json_item.size(); i++) {
-        item_list->add_item(json_item[i].get("name"));
-    }
     db["song"] = 0;
     songs.push_back(Object::cast_to<Node2D>(get_node_internal("song/start")));
     songs.push_back(Object::cast_to<Node2D>(get_node_internal("song/sans")));

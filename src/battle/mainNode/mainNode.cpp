@@ -226,6 +226,9 @@ void BattleNode::start(double delta) {
     }else {
         if(!isS) {
             Object::cast_to<AudioStreamPlayer>(audio["start"])->play();
+            for(int i=0; i < json_item.size(); i++) {
+                item_list->add_item(json_item[i].get("name"));
+            }
             isS = true;
         }
 
